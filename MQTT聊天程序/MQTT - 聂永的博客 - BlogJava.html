@@ -1,0 +1,630 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head id="Head"><title>
+	 MQTT - 聂永的博客 - BlogJava
+</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta id="metaKeywords" name="keywords" content="juc,servlet 3.0, socket.io,push,mqtt,realtime web"><link type="text/css" rel="stylesheet" href="MQTT%20-%20%E8%81%82%E6%B0%B8%E7%9A%84%E5%8D%9A%E5%AE%A2%20-%20BlogJava_files/common.css"><link id="MainCss" type="text/css" rel="stylesheet" href="MQTT%20-%20%E8%81%82%E6%B0%B8%E7%9A%84%E5%8D%9A%E5%AE%A2%20-%20BlogJava_files/style.css"><link id="SecondaryCss" type="text/css" rel="stylesheet" href="MQTT%20-%20%E8%81%82%E6%B0%B8%E7%9A%84%E5%8D%9A%E5%AE%A2%20-%20BlogJava_files/customcss.css"><link id="RSSLink" title="RSS" type="application/rss+xml" rel="alternate" href="http://www.blogjava.net/yongboy/rss.aspx"></head>
+<body>
+    <form name="Form1" method="post" action="54835.html" id="Form1">
+<div>
+<input name="__EVENTTARGET" id="__EVENTTARGET" value="" type="hidden">
+<input name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" type="hidden">
+<input name="__VIEWSTATE" id="
+__VIEWSTATE" value="" type="hidden">
+</div>
+
+<script type="text/javascript" async="" src="MQTT%20-%20%E8%81%82%E6%B0%B8%E7%9A%84%E5%8D%9A%E5%AE%A2%20-%20BlogJava_files/ga.js"></script><script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['Form1'];
+if (!theForm) {
+    theForm = document.Form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+        <link rel="stylesheet" href="MQTT%20-%20%E8%81%82%E6%B0%B8%E7%9A%84%E5%8D%9A%E5%AE%A2%20-%20BlogJava_files/default.css">
+<script src="MQTT%20-%20%E8%81%82%E6%B0%B8%E7%9A%84%E5%8D%9A%E5%AE%A2%20-%20BlogJava_files/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.blogjava.net/yongboy/">聂永的博客</a></h1>
+<p id="tagline">记录工作/学习的点点滴滴。</p>
+			<div id="main">
+				
+					
+<h2>MQTT</h2>
+
+
+			<div class="post">
+				<h5><a id="CategoryEntryList1_EntryStoryList_Entries_ctl00_TitleUrl" href="http://www.blogjava.net/yongboy/archive/2015/01/13/422207.html">MQTT-SN协议乱翻之小结篇</a></h5>
+				
+				
+				
+				<p class="postfoot">		
+					posted @ <a href="http://www.blogjava.net/yongboy/archive/2015/01/13/422207.html" title="permalink">2015-01-13 17:15</a> nieyong 阅读(5191) | <a href="http://www.blogjava.net/yongboy/archive/2015/01/13/422207.html#FeedBack" title="comments, pingbacks, trackbacks">评论 (6)</a> &nbsp;<a href="http://www.blogjava.net/yongboy/admin/EditPosts.aspx?postid=422207">编辑</a>
+				</p>
+			</div>
+	
+			<div class="post">
+				<h5><a id="CategoryEntryList1_EntryStoryList_Entries_ctl01_TitleUrl" href="http://www.blogjava.net/yongboy/archive/2015/01/11/422172.html">MQTT-SN协议乱翻之实现要点</a></h5>
+				
+				
+				
+				<p class="postfoot">		
+					posted @ <a href="http://www.blogjava.net/yongboy/archive/2015/01/11/422172.html" title="permalink">2015-01-11 12:08</a> nieyong 阅读(4782) | <a href="http://www.blogjava.net/yongboy/archive/2015/01/11/422172.html#FeedBack" title="comments, pingbacks, trackbacks">评论 (1)</a> &nbsp;<a href="http://www.blogjava.net/yongboy/admin/EditPosts.aspx?postid=422172">编辑</a>
+				</p>
+			</div>
+	
+			<div class="post">
+				<h5><a id="CategoryEntryList1_EntryStoryList_Entries_ctl02_TitleUrl" href="http://www.blogjava.net/yongboy/archive/2015/01/09/422156.html">MQTT-SN协议乱翻之功能描述</a></h5>
+				
+				
+				
+				<p class="postfoot">		
+					posted @ <a href="http://www.blogjava.net/yongboy/archive/2015/01/09/422156.html" title="permalink">2015-01-09 17:32</a> nieyong 阅读(4433) | <a href="http://www.blogjava.net/yongboy/archive/2015/01/09/422156.html#FeedBack" title="comments, pingbacks, trackbacks">评论 (1)</a> &nbsp;<a href="http://www.blogjava.net/yongboy/admin/EditPosts.aspx?postid=422156">编辑</a>
+				</p>
+			</div>
+	
+			<div class="post">
+				<h5><a id="CategoryEntryList1_EntryStoryList_Entries_ctl03_TitleUrl" href="http://www.blogjava.net/yongboy/archive/2015/01/08/422142.html">MQTT-SN协议乱翻之消息格式</a></h5>
+				
+				
+				
+				<p class="postfoot">		
+					posted @ <a href="http://www.blogjava.net/yongboy/archive/2015/01/08/422142.html" title="permalink">2015-01-08 21:52</a> nieyong 阅读(4325) | <a href="http://www.blogjava.net/yongboy/archive/2015/01/08/422142.html#FeedBack" title="comments, pingbacks, trackbacks">评论 (1)</a> &nbsp;<a href="http://www.blogjava.net/yongboy/admin/EditPosts.aspx?postid=422142">编辑</a>
+				</p>
+			</div>
+	
+			<div class="post">
+				<h5><a id="CategoryEntryList1_EntryStoryList_Entries_ctl04_TitleUrl" href="http://www.blogjava.net/yongboy/archive/2015/01/07/422119.html">MQTT-SN协议乱翻之简要介绍</a></h5>
+				
+				
+				
+				<p class="postfoot">		
+					posted @ <a href="http://www.blogjava.net/yongboy/archive/2015/01/07/422119.html" title="permalink">2015-01-07 22:41</a> nieyong 阅读(6280) | <a href="http://www.blogjava.net/yongboy/archive/2015/01/07/422119.html#FeedBack" title="comments, pingbacks, trackbacks">评论 (0)</a> &nbsp;<a href="http://www.blogjava.net/yongboy/admin/EditPosts.aspx?postid=422119">编辑</a>
+				</p>
+			</div>
+	
+			<div class="post">
+				<h5><a id="CategoryEntryList1_EntryStoryList_Entries_ctl05_TitleUrl" href="http://www.blogjava.net/yongboy/archive/2014/12/16/421460.html">MQTT 3.1.1，值得升级的6个新特性</a></h5>
+				
+				
+				
+				<p class="postfoot">		
+					posted @ <a href="http://www.blogjava.net/yongboy/archive/2014/12/16/421460.html" title="permalink">2014-12-16 13:59</a> nieyong 阅读(15366) | <a href="http://www.blogjava.net/yongboy/archive/2014/12/16/421460.html#FeedBack" title="comments, pingbacks, trackbacks">评论 (8)</a> &nbsp;<a href="http://www.blogjava.net/yongboy/admin/EditPosts.aspx?postid=421460">编辑</a>
+				</p>
+			</div>
+	
+			<div class="post">
+				<h5><a id="CategoryEntryList1_EntryStoryList_Entries_ctl06_TitleUrl" href="http://www.blogjava.net/yongboy/archive/2014/12/12/421331.html">MQTT 3.1协议非严肃反思录</a></h5>
+				
+				
+				
+				<p class="postfoot">		
+					posted @ <a href="http://www.blogjava.net/yongboy/archive/2014/12/12/421331.html" title="permalink">2014-12-12 10:19</a> nieyong 阅读(20630) | <a href="http://www.blogjava.net/yongboy/archive/2014/12/12/421331.html#FeedBack" title="comments, pingbacks, trackbacks">评论 (17)</a> &nbsp;<a href="http://www.blogjava.net/yongboy/admin/EditPosts.aspx?postid=421331">编辑</a>
+				</p>
+			</div>
+	
+			<div class="post">
+				<h5><a id="CategoryEntryList1_EntryStoryList_Entries_ctl07_TitleUrl" href="http://www.blogjava.net/yongboy/archive/2014/06/06/414474.html">MQTT协议笔记之mqtt.io项目HTTP协议支持</a></h5>
+				
+				
+				
+				<p class="postfoot">		
+					posted @ <a href="http://www.blogjava.net/yongboy/archive/2014/06/06/414474.html" title="permalink">2014-06-06 16:42</a> nieyong 阅读(2748) | <a href="http://www.blogjava.net/yongboy/archive/2014/06/06/414474.html#FeedBack" title="comments, pingbacks, trackbacks">评论 (1)</a> &nbsp;<a href="http://www.blogjava.net/yongboy/admin/EditPosts.aspx?postid=414474">编辑</a>
+				</p>
+			</div>
+	
+			<div class="post">
+				<h5><a id="CategoryEntryList1_EntryStoryList_Entries_ctl08_TitleUrl" href="http://www.blogjava.net/yongboy/archive/2014/05/26/414130.html">MQTT协议笔记之mqtt.io项目Websocket协议支持</a></h5>
+				
+				
+				
+				<p class="postfoot">		
+					posted @ <a href="http://www.blogjava.net/yongboy/archive/2014/05/26/414130.html" title="permalink">2014-05-26 19:14</a> nieyong 阅读(6878) | <a href="http://www.blogjava.net/yongboy/archive/2014/05/26/414130.html#FeedBack" title="comments, pingbacks, trackbacks">评论 (4)</a> &nbsp;<a href="http://www.blogjava.net/yongboy/admin/EditPosts.aspx?postid=414130">编辑</a>
+				</p>
+			</div>
+	
+			<div class="post">
+				<h5><a id="CategoryEntryList1_EntryStoryList_Entries_ctl09_TitleUrl" href="http://www.blogjava.net/yongboy/archive/2014/05/24/414071.html">MQTT协议笔记之mqtt.io项目TCP协议支持</a></h5>
+				
+				
+				
+				<p class="postfoot">		
+					posted @ <a href="http://www.blogjava.net/yongboy/archive/2014/05/24/414071.html" title="permalink">2014-05-24 23:03</a> nieyong 阅读(5693) | <a href="http://www.blogjava.net/yongboy/archive/2014/05/24/414071.html#FeedBack" title="comments, pingbacks, trackbacks">评论 (2)</a> &nbsp;<a href="http://www.blogjava.net/yongboy/admin/EditPosts.aspx?postid=414071">编辑</a>
+				</p>
+			</div>
+	
+			<div class="post">
+				<h5><a id="CategoryEntryList1_EntryStoryList_Entries_ctl10_TitleUrl" href="http://www.blogjava.net/yongboy/archive/2014/04/12/412351.html">MQTT协议笔记之订阅</a></h5>
+				
+				
+				
+				<p class="postfoot">		
+					posted @ <a href="http://www.blogjava.net/yongboy/archive/2014/04/12/412351.html" title="permalink">2014-04-12 16:03</a> nieyong 阅读(11235) | <a href="http://www.blogjava.net/yongboy/archive/2014/04/12/412351.html#FeedBack" title="comments, pingbacks, trackbacks">评论 (16)</a> &nbsp;<a href="http://www.blogjava.net/yongboy/admin/EditPosts.aspx?postid=412351">编辑</a>
+				</p>
+			</div>
+	
+			<div class="post">
+				<h5><a id="CategoryEntryList1_EntryStoryList_Entries_ctl11_TitleUrl" href="http://www.blogjava.net/yongboy/archive/2014/02/15/409893.html">MQTT协议笔记之消息流</a></h5>
+				
+				
+				
+				<p class="postfoot">		
+					posted @ <a href="http://www.blogjava.net/yongboy/archive/2014/02/15/409893.html" title="permalink">2014-02-15 19:17</a> nieyong 阅读(21075) | <a href="http://www.blogjava.net/yongboy/archive/2014/02/15/409893.html#FeedBack" title="comments, pingbacks, trackbacks">评论 (9)</a> &nbsp;<a href="http://www.blogjava.net/yongboy/admin/EditPosts.aspx?postid=409893">编辑</a>
+				</p>
+			</div>
+	
+			<div class="post">
+				<h5><a id="CategoryEntryList1_EntryStoryList_Entries_ctl12_TitleUrl" href="http://www.blogjava.net/yongboy/archive/2014/02/10/409689.html">MQTT协议笔记之发布流程</a></h5>
+				
+				
+				
+				<p class="postfoot">		
+					posted @ <a href="http://www.blogjava.net/yongboy/archive/2014/02/10/409689.html" title="permalink">2014-02-10 23:42</a> nieyong 阅读(9249) | <a href="http://www.blogjava.net/yongboy/archive/2014/02/10/409689.html#FeedBack" title="comments, pingbacks, trackbacks">评论 (5)</a> &nbsp;<a href="http://www.blogjava.net/yongboy/admin/EditPosts.aspx?postid=409689">编辑</a>
+				</p>
+			</div>
+	
+			<div class="post">
+				<h5><a id="CategoryEntryList1_EntryStoryList_Entries_ctl13_TitleUrl" href="http://www.blogjava.net/yongboy/archive/2014/02/09/409630.html">MQTT协议笔记之连接和心跳</a></h5>
+				
+				
+				
+				<p class="postfoot">		
+					posted @ <a href="http://www.blogjava.net/yongboy/archive/2014/02/09/409630.html" title="permalink">2014-02-09 13:41</a> nieyong 阅读(17526) | <a href="http://www.blogjava.net/yongboy/archive/2014/02/09/409630.html#FeedBack" title="comments, pingbacks, trackbacks">评论 (7)</a> &nbsp;<a href="http://www.blogjava.net/yongboy/admin/EditPosts.aspx?postid=409630">编辑</a>
+				</p>
+			</div>
+	
+			<div class="post">
+				<h5><a id="CategoryEntryList1_EntryStoryList_Entries_ctl14_TitleUrl" href="http://www.blogjava.net/yongboy/archive/2014/02/07/409587.html">MQTT协议笔记之头部信息</a></h5>
+				
+				
+				
+				<p class="postfoot">		
+					posted @ <a href="http://www.blogjava.net/yongboy/archive/2014/02/07/409587.html" title="permalink">2014-02-07 17:35</a> nieyong 阅读(22900) | <a href="http://www.blogjava.net/yongboy/archive/2014/02/07/409587.html#FeedBack" title="comments, pingbacks, trackbacks">评论 (2)</a> &nbsp;<a href="http://www.blogjava.net/yongboy/admin/EditPosts.aspx?postid=409587">编辑</a>
+				</p>
+			</div>
+	
+
+<p>
+<a id="CategoryEntryList1_EntryStoryList_EntryCollectionReadMoreLink" href="http://www.blogjava.net/yongboy/category/54835.html?Show=All">Full MQTT Archive</a>
+</p>
+
+
+				
+			</div>
+			<div id="rightmenu">
+				
+					
+<h3>公告</h3>
+	<div>所有文章皆为原创，若转载请标明出处，谢谢~ </div>
+<br>
+新浪微博，欢迎关注：<br>
+<a href="http://weibo.com/u/1639071877?s=6uyXnP" target="_blank"><img src="MQTT%20-%20%E8%81%82%E6%B0%B8%E7%9A%84%E5%8D%9A%E5%AE%A2%20-%20BlogJava_files/1.png" alt="" width="270" border="0"></a>
+
+					
+<h3>导航</h3>
+<ul>
+			<li><a id="MyLinks1_HomeLink" href="http://www.blogjava.net/">BlogJava</a></li>
+			<li><a id="MyLinks1_MyHomeLink" href="http://www.blogjava.net/yongboy/">首页</a></li>
+			<li><a id="MyLinks1_NewPostLink" href="http://www.blogjava.net/yongboy/admin/EditPosts.aspx?opt=1">新随笔</a></li>
+			<li><a id="MyLinks1_ContactLink" accesskey="9" href="http://www.blogjava.net/yongboy/contact.aspx?id=1">联系</a></li>
+			<li><a id="MyLinks1_Syndication" href="http://www.blogjava.net/yongboy/rss">聚合</a><a id="MyLinks1_XMLLink" href="http://www.blogjava.net/yongboy/rss"><img src="MQTT%20-%20%E8%81%82%E6%B0%B8%E7%9A%84%E5%8D%9A%E5%AE%A2%20-%20BlogJava_files/xml.gif" style="border-width:0px;"></a>
+			</li><li><a id="MyLinks1_Admin" href="http://www.blogjava.net/yongboy/admin/EditPosts.aspx">管理</a></li>
+</ul>
+					<table id="Calendar1_entryCal" class="Cal" title="日历" style="border-width:1px;border-style:solid;border-collapse:collapse;" cellspacing="0" cellpadding="0" border="0">
+	<tbody><tr><td colspan="7" style="background-color:Silver;"><table class="CalTitle" style="width:100%;border-collapse:collapse;" cellspacing="0" border="0">
+		<tbody><tr><td class="CalNextPrev" style="width:15%;"><a href="javascript:__doPostBack('Calendar1$entryCal','V6269')" style="color:Black" title="转到上一个月">&lt;</a></td><td style="width:70%;" align="center">2017年4月</td><td class="CalNextPrev" style="width:15%;" align="right"><a href="javascript:__doPostBack('Calendar1$entryCal','V6330')" style="color:Black" title="转到下一个月">&gt;</a></td></tr>
+	</tbody></table></td></tr><tr><th class="CalDayHeader" abbr="日" scope="col" align="center">日</th><th class="CalDayHeader" abbr="一" scope="col" align="center">一</th><th class="CalDayHeader" abbr="二" scope="col" align="center">二</th><th class="CalDayHeader" abbr="三" scope="col" align="center">三</th><th class="CalDayHeader" abbr="四" scope="col" align="center">四</th><th class="CalDayHeader" abbr="五" scope="col" align="center">五</th><th class="CalDayHeader" abbr="六" scope="col" align="center">六</th></tr><tr><td class="CalOtherMonthDay" style="width:14%;" align="center">26</td><td class="CalOtherMonthDay" style="width:14%;" align="center">27</td><td class="CalOtherMonthDay" style="width:14%;" align="center">28</td><td class="CalOtherMonthDay" style="width:14%;" align="center">29</td><td class="CalOtherMonthDay" style="width:14%;" align="center">30</td><td class="CalOtherMonthDay" style="width:14%;" align="center">31</td><td class="CalWeekendDay" style="width:14%;" align="center">1</td></tr><tr><td class="CalWeekendDay" style="width:14%;" align="center">2</td><td style="width:14%;" align="center">3</td><td style="width:14%;" align="center">4</td><td style="width:14%;" align="center">5</td><td class="CalTodayDay" style="width:14%;" align="center">6</td><td style="width:14%;" align="center">7</td><td class="CalWeekendDay" style="width:14%;" align="center">8</td></tr><tr><td class="CalWeekendDay" style="width:14%;" align="center">9</td><td style="width:14%;" align="center">10</td><td style="width:14%;" align="center">11</td><td style="width:14%;" align="center">12</td><td style="width:14%;" align="center">13</td><td style="width:14%;" align="center">14</td><td class="CalWeekendDay" style="width:14%;" align="center">15</td></tr><tr><td class="CalWeekendDay" style="width:14%;" align="center">16</td><td style="width:14%;" align="center">17</td><td style="width:14%;" align="center">18</td><td style="width:14%;" align="center">19</td><td style="width:14%;" align="center">20</td><td style="width:14%;" align="center">21</td><td class="CalWeekendDay" style="width:14%;" align="center">22</td></tr><tr><td class="CalWeekendDay" style="width:14%;" align="center">23</td><td style="width:14%;" align="center">24</td><td style="width:14%;" align="center">25</td><td style="width:14%;" align="center">26</td><td style="width:14%;" align="center">27</td><td style="width:14%;" align="center">28</td><td class="CalWeekendDay" style="width:14%;" align="center">29</td></tr><tr><td class="CalWeekendDay" style="width:14%;" align="center">30</td><td class="CalOtherMonthDay" style="width:14%;" align="center">1</td><td class="CalOtherMonthDay" style="width:14%;" align="center">2</td><td class="CalOtherMonthDay" style="width:14%;" align="center">3</td><td class="CalOtherMonthDay" style="width:14%;" align="center">4</td><td class="CalOtherMonthDay" style="width:14%;" align="center">5</td><td class="CalOtherMonthDay" style="width:14%;" align="center">6</td></tr>
+</tbody></table>
+
+					
+<h3>统计</h3>
+	<ul>
+		<li>随笔 - 147
+		</li><li>文章 - 0
+		</li><li>评论 - 309
+		</li><li>引用 - 0
+	</li>
+</ul>
+					
+<h3>常用链接</h3>
+<ul>
+		<li><a id="SingleColumn1_ctl00_repeaterLinks_ctl01_lnkLinkItem" href="http://www.blogjava.net/yongboy/MyPosts.html">我的随笔</a></li>
+	
+		<li><a id="SingleColumn1_ctl00_repeaterLinks_ctl02_lnkLinkItem" href="http://www.blogjava.net/yongboy/MyComments.html">我的评论</a></li>
+	
+		<li><a id="SingleColumn1_ctl00_repeaterLinks_ctl03_lnkLinkItem" href="http://www.blogjava.net/yongboy/OtherPosts.html">我的参与</a></li>
+	
+		<li><a id="SingleColumn1_ctl00_repeaterLinks_ctl04_lnkLinkItem" href="http://www.blogjava.net/yongboy/RecentComments.html">最新评论</a></li>
+	</ul>
+<h3>留言簿<span style="font-size:11px;font-weight:normal;">(41)</span></h3>
+<ul>
+	<li>
+		<a id="SingleColumn1_ctl01_lnkMessages" href="http://www.blogjava.net/yongboy/Contact.aspx?id=1">给我留言</a>
+	</li><li>
+		<a id="SingleColumn1_ctl01_lnkPublicMsgView" href="http://www.blogjava.net/yongboy/default.aspx?opt=msg">查看公开留言</a>
+	</li><li>
+		<a id="SingleColumn1_ctl01_lnkPrivateMsgView" href="http://www.blogjava.net/yongboy/admin/MyMessages.aspx">查看私人留言</a>
+	</li>
+</ul>
+
+		<h3>随笔分类<span style="font-size:11px;font-weight:normal">(123)</span></h3>
+		
+				<ul>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_Link" href="http://www.blogjava.net/yongboy/category/54842.html">C1M(6)</a> <a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_RssLink" title="Subscribe to C1M(6)" href="http://www.blogjava.net/yongboy/category/54842.html/rss">(rss)</a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_Link" href="http://www.blogjava.net/yongboy/category/54836.html">HTTP(6)</a> <a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_RssLink" title="Subscribe to HTTP(6)" href="http://www.blogjava.net/yongboy/category/54836.html/rss">(rss)</a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_Link" href="http://www.blogjava.net/yongboy/category/54839.html">Java(20)</a> <a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_RssLink" title="Subscribe to Java(20)" href="http://www.blogjava.net/yongboy/category/54839.html/rss">(rss)</a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_Link" href="http://www.blogjava.net/yongboy/category/54835.html">MQTT(15)</a> <a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_RssLink" title="Subscribe to MQTT(15)" href="http://www.blogjava.net/yongboy/category/54835.html/rss">(rss)</a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl05_Link" href="http://www.blogjava.net/yongboy/category/48044.html">Servlet3(26)</a> <a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl05_RssLink" title="Subscribe to Servlet3(26)" href="http://www.blogjava.net/yongboy/category/48044.html/rss">(rss)</a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl06_Link" href="http://www.blogjava.net/yongboy/category/54837.html">Socket(19)</a> <a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl06_RssLink" title="Subscribe to Socket(19)" href="http://www.blogjava.net/yongboy/category/54837.html/rss">(rss)</a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl07_Link" href="http://www.blogjava.net/yongboy/category/54838.html">socket.io(12)</a> <a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl07_RssLink" title="Subscribe to socket.io(12)" href="http://www.blogjava.net/yongboy/category/54838.html/rss">(rss)</a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl08_Link" href="http://www.blogjava.net/yongboy/category/55089.html">压测(10)</a> <a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl08_RssLink" title="Subscribe to 压测(10)" href="http://www.blogjava.net/yongboy/category/55089.html/rss">(rss)</a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl09_Link" href="http://www.blogjava.net/yongboy/category/54841.html">容器(7)</a> <a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl09_RssLink" title="Subscribe to 容器(7)" href="http://www.blogjava.net/yongboy/category/54841.html/rss">(rss)</a></li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl10_Link" href="http://www.blogjava.net/yongboy/category/54840.html">移动后端(2)</a> <a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl10_RssLink" title="Subscribe to 移动后端(2)" href="http://www.blogjava.net/yongboy/category/54840.html/rss">(rss)</a></li>
+			
+				</ul>
+			
+	
+		<h3>随笔档案<span style="font-size:11px;font-weight:normal">(146)</span></h3>
+		
+				<ul>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl01_Link" href="http://www.blogjava.net/yongboy/archive/2016/08.html">2016年8月 (2)</a> </li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl02_Link" href="http://www.blogjava.net/yongboy/archive/2016/07.html">2016年7月 (8)</a> </li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl03_Link" href="http://www.blogjava.net/yongboy/archive/2015/05.html">2015年5月 (1)</a> </li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl04_Link" href="http://www.blogjava.net/yongboy/archive/2015/04.html">2015年4月 (1)</a> </li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl05_Link" href="http://www.blogjava.net/yongboy/archive/2015/03.html">2015年3月 (7)</a> </li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl06_Link" href="http://www.blogjava.net/yongboy/archive/2015/02.html">2015年2月 (6)</a> </li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl07_Link" href="http://www.blogjava.net/yongboy/archive/2015/01.html">2015年1月 (9)</a> </li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl08_Link" href="http://www.blogjava.net/yongboy/archive/2014/12.html">2014年12月 (3)</a> </li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl09_Link" href="http://www.blogjava.net/yongboy/archive/2014/11.html">2014年11月 (2)</a> </li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl10_Link" href="http://www.blogjava.net/yongboy/archive/2014/10.html">2014年10月 (1)</a> </li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl11_Link" href="http://www.blogjava.net/yongboy/archive/2014/09.html">2014年9月 (1)</a> </li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl12_Link" href="http://www.blogjava.net/yongboy/archive/2014/08.html">2014年8月 (2)</a> </li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl13_Link" href="http://www.blogjava.net/yongboy/archive/2014/07.html">2014年7月 (2)</a> </li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl14_Link" href="http://www.blogjava.net/yongboy/archive/2014/06.html">2014年6月 (2)</a> </li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl15_Link" href="http://www.blogjava.net/yongboy/archive/2014/05.html">2014年5月 (2)</a> </li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl16_Link" href="http://www.blogjava.net/yongboy/archive/2014/04.html">2014年4月 (1)</a> </li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl17_Link" href="http://www.blogjava.net/yongboy/archive/2014/03.html">2014年3月 (1)</a> </li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl18_Link" href="http://www.blogjava.net/yongboy/archive/2014/02.html">2014年2月 (4)</a> </li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl19_Link" href="http://www.blogjava.net/yongboy/archive/2013/12.html">2013年12月 (4)</a> </li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl20_Link" href="http://www.blogjava.net/yongboy/archive/2013/08.html">2013年8月 (1)</a> </li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl21_Link" href="http://www.blogjava.net/yongboy/archive/2013/06.html">2013年6月 (1)</a> </li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl22_Link" href="http://www.blogjava.net/yongboy/archive/2013/05.html">2013年5月 (1)</a> </li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl23_Link" href="http://www.blogjava.net/yongboy/archive/2013/04.html">2013年4月 (5)</a> </li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl24_Link" href="http://www.blogjava.net/yongboy/archive/2013/03.html">2013年3月 (5)</a> </li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl25_Link" href="http://www.blogjava.net/yongboy/archive/2012/10.html">2012年10月 (2)</a> </li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl26_Link" href="http://www.blogjava.net/yongboy/archive/2012/08.html">2012年8月 (2)</a> </li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl27_Link" href="http://www.blogjava.net/yongboy/archive/2012/06.html">2012年6月 (2)</a> </li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl28_Link" href="http://www.blogjava.net/yongboy/archive/2012/05.html">2012年5月 (3)</a> </li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl29_Link" href="http://www.blogjava.net/yongboy/archive/2012/04.html">2012年4月 (4)</a> </li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl30_Link" href="http://www.blogjava.net/yongboy/archive/2012/03.html">2012年3月 (1)</a> </li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl31_Link" href="http://www.blogjava.net/yongboy/archive/2012/02.html">2012年2月 (7)</a> </li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl32_Link" href="http://www.blogjava.net/yongboy/archive/2012/01.html">2012年1月 (2)</a> </li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl33_Link" href="http://www.blogjava.net/yongboy/archive/2011/04.html">2011年4月 (1)</a> </li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl34_Link" href="http://www.blogjava.net/yongboy/archive/2011/03.html">2011年3月 (1)</a> </li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl35_Link" href="http://www.blogjava.net/yongboy/archive/2011/02.html">2011年2月 (4)</a> </li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl36_Link" href="http://www.blogjava.net/yongboy/archive/2011/01.html">2011年1月 (10)</a> </li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl37_Link" href="http://www.blogjava.net/yongboy/archive/2010/12.html">2010年12月 (5)</a> </li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl38_Link" href="http://www.blogjava.net/yongboy/archive/2010/11.html">2010年11月 (1)</a> </li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl39_Link" href="http://www.blogjava.net/yongboy/archive/2010/10.html">2010年10月 (10)</a> </li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl40_Link" href="http://www.blogjava.net/yongboy/archive/2010/07.html">2010年7月 (4)</a> </li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl41_Link" href="http://www.blogjava.net/yongboy/archive/2009/11.html">2009年11月 (1)</a> </li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl42_Link" href="http://www.blogjava.net/yongboy/archive/2009/09.html">2009年9月 (3)</a> </li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl43_Link" href="http://www.blogjava.net/yongboy/archive/2009/08.html">2009年8月 (4)</a> </li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl44_Link" href="http://www.blogjava.net/yongboy/archive/2009/05.html">2009年5月 (1)</a> </li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl45_Link" href="http://www.blogjava.net/yongboy/archive/2009/02.html">2009年2月 (1)</a> </li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl46_Link" href="http://www.blogjava.net/yongboy/archive/2009/01.html">2009年1月 (1)</a> </li>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl47_Link" href="http://www.blogjava.net/yongboy/archive/2008/12.html">2008年12月 (4)</a> </li>
+			
+				</ul>
+			
+	
+		<h3>个人收藏</h3>
+		
+				<ul>
+			
+				<li><a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl01_Link" href="http://gjsq.me/1034269" target="_blank">国内老牌GreenVPN，翻墙速度确实杠杠的！</a> </li>
+			<li style="margin-top:2px;">个人一直在使用中，在线观看www.youtube.com上高清视频一点都不卡。
+每个月才18块钱，一个季度48，再超值提供一个9折优惠码：freevpnssh。
+
+
+我平常在Linux下安装/更新软件，压根不用担心GFW阻挠了，
+更不用提windows 7了。</li>
+				</ul>
+			
+	
+
+<h3>最新随笔</h3>
+<div class="RecentComment">
+<ul style="word-break:break-all">
+	
+	
+			<li><a id="SingleColumn1_ctl03_RecentPostsList_ctl00_RecentPostsList2_ctl00_Hyperlink1" href="http://www.blogjava.net/yongboy/archive/2016/08/16/431601.html">1.&nbsp;Tsung笔记之IP地址和端口限制突破篇</a></li>
+		
+		
+	
+			<li><a id="SingleColumn1_ctl03_RecentPostsList_ctl01_RecentPostsList2_ctl00_Hyperlink1" href="http://www.blogjava.net/yongboy/archive/2016/08/08/431498.html">2.&nbsp;Tsung笔记之100万用户压测执行步骤篇</a></li>
+		
+		
+	
+			<li><a id="SingleColumn1_ctl03_RecentPostsList_ctl02_RecentPostsList2_ctl00_Hyperlink1" href="http://www.blogjava.net/yongboy/archive/2016/07/30/431396.html">3.&nbsp;Tsung笔记之插件编写篇</a></li>
+		
+		
+	
+			<li><a id="SingleColumn1_ctl03_RecentPostsList_ctl03_RecentPostsList2_ctl00_Hyperlink1" href="http://www.blogjava.net/yongboy/archive/2016/07/29/431367.html">4.&nbsp;Tsung笔记之监控数据收集篇</a></li>
+		
+		
+	
+			<li><a id="SingleColumn1_ctl03_RecentPostsList_ctl04_RecentPostsList2_ctl00_Hyperlink1" href="http://www.blogjava.net/yongboy/archive/2016/07/28/431354.html">5.&nbsp;Tsung笔记之IP直连支持篇</a></li>
+		
+		
+	
+			<li><a id="SingleColumn1_ctl03_RecentPostsList_ctl05_RecentPostsList2_ctl00_Hyperlink1" href="http://www.blogjava.net/yongboy/archive/2016/07/27/431340.html">6.&nbsp;Tsung笔记之分布式增强跳出SSH羁绊篇</a></li>
+		
+		
+	
+			<li><a id="SingleColumn1_ctl03_RecentPostsList_ctl06_RecentPostsList2_ctl00_Hyperlink1" href="http://www.blogjava.net/yongboy/archive/2016/07/26/431322.html">7.&nbsp;Tsung笔记之压测端资源限制篇</a></li>
+		
+		
+	
+			<li><a id="SingleColumn1_ctl03_RecentPostsList_ctl07_RecentPostsList2_ctl00_Hyperlink1" href="http://www.blogjava.net/yongboy/archive/2016/07/25/431310.html">8.&nbsp;Tsung笔记之主从资源协调篇</a></li>
+		
+		
+	
+			<li><a id="SingleColumn1_ctl03_RecentPostsList_ctl08_RecentPostsList2_ctl00_Hyperlink1" href="http://www.blogjava.net/yongboy/archive/2016/07/23/431294.html">9.&nbsp;Tsung笔记之主从模型篇</a></li>
+		
+		
+	
+			<li><a id="SingleColumn1_ctl03_RecentPostsList_ctl09_RecentPostsList2_ctl00_Hyperlink1" href="http://www.blogjava.net/yongboy/archive/2016/07/22/431291.html">10.&nbsp;Tsung笔记之开篇</a></li>
+		
+		
+	
+			<li><a id="SingleColumn1_ctl03_RecentPostsList_ctl10_RecentPostsList2_ctl00_Hyperlink1" href="http://www.blogjava.net/yongboy/archive/2015/05/07/424917.html">11.&nbsp;TCP协议缺陷不完全记录</a></li>
+		
+		
+	
+			<li><a id="SingleColumn1_ctl03_RecentPostsList_ctl11_RecentPostsList2_ctl00_Hyperlink1" href="http://www.blogjava.net/yongboy/archive/2015/04/14/424413.html">12.&nbsp;随手记之TCP Keepalive笔记</a></li>
+		
+		
+	
+			<li><a id="SingleColumn1_ctl03_RecentPostsList_ctl12_RecentPostsList2_ctl00_Hyperlink1" href="http://www.blogjava.net/yongboy/archive/2015/03/30/423963.html">13.&nbsp;移动APP后端网络处理一些问题记录</a></li>
+		
+		
+	
+			<li><a id="SingleColumn1_ctl03_RecentPostsList_ctl13_RecentPostsList2_ctl00_Hyperlink1" href="http://www.blogjava.net/yongboy/archive/2015/03/24/423791.html">14.&nbsp;HTTP/2笔记之错误处理和安全</a></li>
+		
+		
+	
+			<li><a id="SingleColumn1_ctl03_RecentPostsList_ctl14_RecentPostsList2_ctl00_Hyperlink1" href="http://www.blogjava.net/yongboy/archive/2015/03/23/423751.html">15.&nbsp;HTTP/2笔记之消息交换</a></li>
+		
+	
+</ul>
+</div>
+
+<script language="JavaScript">
+function SearchGoogle(key,evt,site)
+		{
+			if(evt.keyCode==13 || evt.keyCode==0 || evt.type =='click')
+			{
+				key.focus();
+				var keystr = encodeURIComponent(key.value);
+				url = "http://www.google.com/search?q=";
+				url = url+keystr;
+				url += "&ie=UTF-8&oe=GB2312&hl=zh-CN&domains="+site+"&sitesearch="+site;
+				window.location=url;
+				return false;
+			}
+		}
+</script>
+<h3>搜索</h3>
+<ul>
+	<li>
+		</li><li><input style="WIDTH: 130px" name="q" id="q" onkeydown="return SearchGoogle(document.getElementById('q'),event,'www.blogjava.net/yongboy')" type="text">&nbsp;<input onclick="SearchGoogle(document.getElementById('q'),event,'www.blogjava.net/yongboy')" value="搜索" name="sa" type="button">
+	</li>
+</ul>
+
+<h3>最新评论
+	<a id="SingleColumn1__227c3bd_RSSHyperlink1" href="http://www.blogjava.net/yongboy/CommentsRSS.aspx"><img src="MQTT%20-%20%E8%81%82%E6%B0%B8%E7%9A%84%E5%8D%9A%E5%AE%A2%20-%20BlogJava_files/xml.gif" style="border-width:0px;"></a></h3>
+<div class="RecentComment">
+	
+			<ul>
+		
+			<li style="word-break:break-all">
+				<a id="SingleColumn1__227c3bd_CommentList_ctl01_Hyperlink1" href="http://www.blogjava.net/yongboy/archive/2017/01/10/409689.html#432258">1.&nbsp;re: MQTT协议笔记之发布流程</a>
+			</li>
+			<li style="word-break:break-all">
+				评论内容较长,点击标题查看
+			</li>
+			<li style="text-align:right;margin-right:4px">
+				--Haven</li>
+		
+			<li style="word-break:break-all">
+				<a id="SingleColumn1__227c3bd_CommentList_ctl02_Hyperlink1" href="http://www.blogjava.net/yongboy/archive/2017/01/05/409689.html#432243">2.&nbsp;re: MQTT协议笔记之发布流程</a>
+			</li>
+			<li style="word-break:break-all">
+				评论内容较长,点击标题查看
+			</li>
+			<li style="text-align:right;margin-right:4px">
+				--nieyong</li>
+		
+			<li style="word-break:break-all">
+				<a id="SingleColumn1__227c3bd_CommentList_ctl03_Hyperlink1" href="http://www.blogjava.net/yongboy/archive/2016/12/27/409689.html#432184">3.&nbsp;re: MQTT协议笔记之发布流程</a>
+			</li>
+			<li style="word-break:break-all">
+				博主牛人呀，有一个QoS2的问题请教，为什么QoS2需要4次包，2次不就可以了吗？还望回复。
+			</li>
+			<li style="text-align:right;margin-right:4px">
+				--Haven</li>
+		
+			<li style="word-break:break-all">
+				<a id="SingleColumn1__227c3bd_CommentList_ctl04_Hyperlink1" href="http://www.blogjava.net/yongboy/archive/2016/08/19/431601.html#431642">4.&nbsp;re: Tsung笔记之IP地址和端口限制突破篇</a>
+			</li>
+			<li style="word-break:break-all">
+				评论内容较长,点击标题查看
+			</li>
+			<li style="text-align:right;margin-right:4px">
+				--nieyong</li>
+		
+			<li style="word-break:break-all">
+				<a id="SingleColumn1__227c3bd_CommentList_ctl05_Hyperlink1" href="http://www.blogjava.net/yongboy/archive/2016/08/18/431601.html#431628">5.&nbsp;re: Tsung笔记之IP地址和端口限制突破篇</a>
+			</li>
+			<li style="word-break:break-all">
+				博主，请问下<br>最新版1.6.1版本什么时候发布啊，最近工作需要对TCP协议做性能测试
+			</li>
+			<li style="text-align:right;margin-right:4px">
+				--王大</li>
+		
+			</ul>
+		
+</div>
+
+<h3>阅读排行榜</h3>
+<div class="RecentComment">
+	
+			<ul style="word-break:break-all">
+		
+			<li>
+				<a id="SingleColumn1__215615_TopList_ctl01_Hyperlink1" href="http://www.blogjava.net/yongboy/archive/2013/12/12/407498.html">1.&nbsp;Docker学习笔记之一，搭建一个JAVA Tomcat运行环境(92214)</a>
+			</li>
+		
+			<li>
+				<a id="SingleColumn1__215615_TopList_ctl02_Hyperlink1" href="http://www.blogjava.net/yongboy/archive/2009/09/04/293900.html">2.&nbsp;java war 打包、解压命令(75175)</a>
+			</li>
+		
+			<li>
+				<a id="SingleColumn1__215615_TopList_ctl03_Hyperlink1" href="http://www.blogjava.net/yongboy/archive/2014/03/05/410636.html">3.&nbsp;微信协议简单调研笔记(61018)</a>
+			</li>
+		
+			<li>
+				<a id="SingleColumn1__215615_TopList_ctl04_Hyperlink1" href="http://www.blogjava.net/yongboy/archive/2013/05/13/399203.html">4.&nbsp;100万并发连接服务器笔记之Java Netty处理1M连接会怎么样(51379)</a>
+			</li>
+		
+			<li>
+				<a id="SingleColumn1__215615_TopList_ctl05_Hyperlink1" href="http://www.blogjava.net/yongboy/archive/2013/08/26/403325.html">5.&nbsp;服务器操作系统CoreOS初体验(46905)</a>
+			</li>
+		
+			</ul>
+		
+</div>
+
+<h3>评论排行榜</h3>
+<div class="RecentComment">
+	
+			<ul style="word-break:break-all">
+		
+			<li>
+				<a id="SingleColumn1__2be97ce_TopList_ctl01_Hyperlink1" href="http://www.blogjava.net/yongboy/archive/2014/03/05/410636.html">1.&nbsp;微信协议简单调研笔记(22)</a>
+			</li>
+		
+			<li>
+				<a id="SingleColumn1__2be97ce_TopList_ctl02_Hyperlink1" href="http://www.blogjava.net/yongboy/archive/2013/12/12/407498.html">2.&nbsp;Docker学习笔记之一，搭建一个JAVA Tomcat运行环境(19)</a>
+			</li>
+		
+			<li>
+				<a id="SingleColumn1__2be97ce_TopList_ctl03_Hyperlink1" href="http://www.blogjava.net/yongboy/archive/2014/12/12/421331.html">3.&nbsp;MQTT 3.1协议非严肃反思录(17)</a>
+			</li>
+		
+			<li>
+				<a id="SingleColumn1__2be97ce_TopList_ctl04_Hyperlink1" href="http://www.blogjava.net/yongboy/archive/2014/11/09/419829.html">4.&nbsp;为什么批量请求要尽可能的合并操作(17)</a>
+			</li>
+		
+			<li>
+				<a id="SingleColumn1__2be97ce_TopList_ctl05_Hyperlink1" href="http://www.blogjava.net/yongboy/archive/2014/04/12/412351.html">5.&nbsp;MQTT协议笔记之订阅(16)</a>
+			</li>
+		
+			</ul>
+		
+</div>
+
+					
+<div id="footer">
+	Powered by: 
+	<br>
+	
+	<a id="Footer1_Hyperlink3" name="Hyperlink1" href="http://www.blogjava.net/" style="font-family:Verdana;font-size:12px;">BlogJava</a>
+	<br>
+	Copyright © nieyong
+</div>
+				
+			</div>			
+			
+	
+
+    </form>
+    <script type="text/javascript" src="MQTT%20-%20%E8%81%82%E6%B0%B8%E7%9A%84%E5%8D%9A%E5%AE%A2%20-%20BlogJava_files/ShowHidden.js"></script>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-476124-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+
+</body></html>
